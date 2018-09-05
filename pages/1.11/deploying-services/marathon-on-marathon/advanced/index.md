@@ -729,6 +729,25 @@ In this step, you log in as a authorized user to the non-native Marathon DC/OS s
 
     ![Marathon on Marathon](/1.11/img/mom-marathon-gui.png)
 
+
+# Next Steps
+
+- You can configure the DC/OS CLI to interact with your non-native Marathon instance using the following command:
+    
+    ```sh
+    dcos config set marathon.url \
+      $(dcos config show core.dcos_url)/service/${MARATHON_INSTANCE_NAME}
+    ```
+
+    Now any future `dcos marathon ...` commands will target your new marathon instance.
+
+    To undo this change, use the following command:
+
+    ```sh
+    dcos config unset marathon.url
+    ```
+
+
 # Known pitfalls
 
 - When launching docker containers user _nobody_ does not have enough rights to execute the command e.g. stating _nginx_ as _nobody_ will fail because _nobody_ does not have the right  to write logs to /var/log (as nginx needs). 
