@@ -14,7 +14,7 @@ For this procedure, we are assuming that you have obtained an enterprise version
 
 **Prerequisites:**
 
--  DC/OS and DC/OS CLI [installed](/1.11/installing/oss/).
+-  DC/OS and DC/OS CLI [installed](/1.11/installing/).
 -  [DC/OS Enterprise CLI 0.4.14 or later](/1.11/cli/enterprise-cli/#ent-cli-install).
 -  A private Docker registry that each private DC/OS agent can access over the network. You can follow [these](/1.11/deploying-services/private-docker-registry/) instructions for how to set up in Marathon, or use another option such as [DockerHub](https://hub.docker.com/), [Amazon EC2 Container Registry](https://aws.amazon.com/ecr/), and [Quay](https://quay.io/)).
 -  Custom non-native Marathon (version 0.11.0 or newer) image [deployed in your private Docker registry](/1.11/deploying-services/private-docker-registry#tarball-instructions). Contact your sales representative or <sales@mesosphere.io> for obtain the enterprise Marathon image file.
@@ -126,7 +126,7 @@ A _static_ reservation is achieved by changing the default Mesos Role of a parti
         sudo systemctl start dcos-mesos-slave
         ```
 
-        **Tip:** You can check the status with this command:
+        You can check the status with this command:
 
         ```bash
         sudo systemctl status dcos-mesos-slave
@@ -244,7 +244,6 @@ Depending on your [security mode](/1.11/security/ent/#security-modes), a Maratho
     ```bash
     dcos security org service-accounts create -p ${PUBLIC_KEY} -d "Marathon-on-Marathon User" ${SERVICE_ACCOUNT_ID}
     ```
-
 
 # Step 4: Create a Service Account Secret
 In this step, a secret is created for the Marathon service account and stored in the Secret Store.
@@ -726,10 +725,9 @@ In this step, you log in as a authorized user to the non-native Marathon DC/OS s
 
     ![Log in DC/OS](/1.11/img/gui-installer-login-ee.gif)
 
-    You are done!
+    Figure 4. You are done!
 
     ![Marathon on Marathon](/1.11/img/mom-marathon-gui.png)
-
 
 # Known pitfalls
 
